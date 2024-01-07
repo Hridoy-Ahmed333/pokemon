@@ -1,13 +1,453 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  width: 80%;
+  top: 30px;
+  gap: 30px;
+  /* border: 1px solid #000; */
+}
+
+.first-component,
+.third-component {
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  flex: 1 0 80%;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 5px;
+}
+
+.third-component {
+  background-color: #f6d3ae;
+  border-radius: 20px;
+}
+
+.first-component-item1,
+.first-component-item2,
+.third-component-item1,
+.third-component-item2 {
+  /* border: 1px solid #000; */
+  flex: 1 0 50%;
+}
+
+.first-component-item1 {
+  background-color: #f6d3ae;
+  border-radius: 20px;
+}
+.first-component-item2 {
+  background-color: #f6d3ae;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+.second-component {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(203, 235, 138);
+  flex: 1 0 80%;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 5px;
+}
+
+.second-component-item1,
+.second-component-item2 {
+  height: 350px;
+  flex: 1 0 30%;
+}
+
+.second-component-item1 {
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+}
+
+.second-component-item2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-component-item3 {
+  height: 350px;
+  flex: 1 0 40%;
+}
+.third-component-item2 {
+  display: flex;
+  flex-direction: column;
+}
+.fourth-component {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 0 80%;
+  margin-left: 5%;
+  margin-right: 5%;
+  gap: 5px;
+}
+
+.fourth-component-item1 {
+  align-self: center;
+  text-align: center;
+  border-radius: 20px;
+  height: 50px;
+  background-color: rgb(203, 235, 138);
+  width: 100%;
+}
+.fourth-component-item2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
+.fourth-component-item2-part1 {
+  background-color: #f6d3ae;
+  flex: 1 0 50%;
+  border-radius: 20px;
+}
+
+.fourth-component-item2-part2 {
+  background-color: #f6d3ae;
+  flex: 1 0 50%;
+  border-radius: 20px;
+}
+
+.fourth-component-players {
+  display: flex;
+  flex-direction: column;
+}
+
+.fourth-component-item3 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  /* height: 350px; */
+}
+.fourth-component-item3-part1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 50%;
+  width: 600px;
+  height: 600px;
+}
+.fourth-component-item3-part1-box1 {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 150%;
+  align-self: center;
+  flex: 1;
+}
+
+.fourth-component-item3-part1-box1 h3 {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.fourth-component-item3-part1-box2 {
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  flex: 5;
+}
+
+.fourth-component-item3-part1-box2 img {
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+}
+.fourth-component-item4 {
+  align-self: center;
+  text-align: center;
+  border-radius: 20px;
+  height: 50px;
+  background-color: rgb(241, 92, 18);
+  width: 100%;
+}
+
+.fourth-component-item4 h3 {
+  font-size: 200%;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.sidebar {
+  background-color: #f6d3ae;
+  border-radius: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: 4.8rem 1fr auto;
+  align-items: center;
+  column-gap: 1.6rem;
+
+  padding: 1.2rem;
+  border-radius: 7px;
+  transition: 0.5s;
+}
+
+.selected,
+.sidebar li:hover {
+  background-color: #fff4e6;
+}
+
+.sidebar li img {
+  border-radius: 50%;
+  width: 100%;
+  grid-row: span 2;
+}
+
+.sidebar li h3 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.sidebar li p {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.sidebar > .button {
+  float: right;
+  margin-right: 1.2rem;
+}
+.button {
+  background-color: #ffa94d;
+  color: #343a40;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block; /* or display: inline-block; */
+  margin-top: 10px;
+}
+
+span {
+  background-color: #4dff50;
+  color: #343a40;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: inline-block; /* or display: inline-block; */
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.second-side-bar {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  word-wrap: break-word;
+  flex: 6;
+}
+.select-pokemon-text {
+  margin-top: 10px;
+  align-self: center;
+  flex: 1;
+}
+
+.choose-pokemon {
+  justify-content: flex-end;
+  align-self: center;
+
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.second-component-item1 img {
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+}
+.name {
+  flex: 1;
+}
+.description {
+  flex: 4;
+  width: 100%;
+}
+
+.name {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 150%;
+  align-self: center;
+  flex: 1;
+  background-color: rgb(167, 205, 91);
+}
+.name2 {
+  display: block;
+  text-align: center;
+  margin-top: 0px;
+  font-size: 150%;
+  align-self: center;
+  flex: 1;
+}
+.name h3 {
+  display: inline-block;
+  margin-top: 8px;
+}
+.name2 h3 {
+  display: inline-block;
+  margin-top: 8px;
+}
+.description {
+  font-size: 150%;
+  align-self: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  word-wrap: break-word;
+  flex: 6;
+  background-color: rgb(167, 205, 91);
+}
+.description p {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.poke-comp {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  word-wrap: break-word;
+  flex: 6;
+}
+form {
+  font-size: 1.6rem;
+  display: grid;
+  align-items: center;
+  gap: 1.2rem;
+
+  background-color: var(--color-lightest);
+  border-radius: 7px;
+}
+
+.form-add-friend {
+  grid-template-columns: 1fr 1.5fr;
+  margin-bottom: 1.6rem;
+  padding: 1.2rem;
+}
+label {
+  font-weight: 500;
+}
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid var(--color-light);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid var(--color-dark);
+}
+
+form .button {
+  margin-top: 0.6rem;
+  grid-column: 2;
+}
+
+form h2 {
+  grid-column: 1 / -1;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.6rem;
+}
+.select-pokemon-text2 {
+  margin-top: 10px;
+  align-self: center;
+  flex: 1;
+}
+.second-side-bar2 {
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  word-wrap: break-word;
+  flex: 6;
+}
+.choose-pokemon2 {
+  justify-content: flex-end;
+  align-self: center;
+
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.finBut {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.textarea {
+  width: 350px;
+  height: 100px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.descIn {
+  height: 300px;
 }
